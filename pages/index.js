@@ -28,7 +28,7 @@ export default function BlogPosts({ blogPosts }) {
   console.log(blogPosts, "<--- blogPosts");
   return (
     <div className="blog-post-list">
-      <h1 className="title">Featured Blog Posts</h1>
+      <h1 className="title">Featured articles</h1>
       {blogPosts.map((posts, index) => {
         return (
           <div key={index} className="blog-posts-container">
@@ -37,10 +37,11 @@ export default function BlogPosts({ blogPosts }) {
                 {posts.fields.title}
               </a>
             </Link>
-
             <h3 className="brief-description">
               {posts.fields.briefDescription.content[0].content[0].value}
             </h3>
+            <p className="blog-author">By {posts.fields.author}</p>
+            <p className="blog-date-created">{posts.fields.dateCreated}</p>
           </div>
         );
       })}
