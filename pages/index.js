@@ -25,7 +25,6 @@ export async function getStaticProps() {
 
 // Any data added inside of the props object is passed to the BlogPosts component
 export default function BlogPosts({ blogPosts }) {
-  console.log(blogPosts, "<--- blogPosts");
   return (
     <div className="blog-post-list">
       <h1 className="title">Featured articles</h1>
@@ -38,7 +37,7 @@ export default function BlogPosts({ blogPosts }) {
               </a>
             </Link>
             <h3 className="brief-description">
-              {posts.fields.briefDescription.content[0].content[0].value}
+              {posts.fields.briefDescription}
             </h3>
             <p className="blog-author">By {posts.fields.author}</p>
             <p className="blog-date-created">{posts.fields.dateCreated}</p>
