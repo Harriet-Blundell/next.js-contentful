@@ -16,25 +16,48 @@ a {
 }
 
 .blog-post-list {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
 
 .title {
   text-align: center;
+  padding-bottom: 20px;
 }
 
 .blog-posts-container {
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
-  background-color: lightgray;
+  background: #fff;
+  box-shadow: 0 0 20px rgb(174 190 210 / 40%);
   padding: 20px 20px;
+  border-radius: 10px;
+  width: 500px;
 }
 
 .blog-title {
   font-size: 30px;
   font-weight: bold;
-  color: red;
+  padding-top: 10px;
+}
+
+.blog-image {
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+}
+
+.blog-author-container {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 100%;
+}
+
+.blog-author {
+  padding-left: 10px;
 }

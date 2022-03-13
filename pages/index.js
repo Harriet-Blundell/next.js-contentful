@@ -1,6 +1,5 @@
 import { createClient } from "contentful";
-import Image from "next/image";
-import Link from "next/link";
+import BlogCard from "../components/BlogCard";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 // asynchronous to collect data
@@ -25,27 +24,15 @@ export async function getStaticProps() {
 
 // Any data added inside of the props object is passed to the BlogPosts component
 export default function BlogPosts({ blogPosts }) {
+  console.log(blogPosts);
   return (
-    <div className="blog-post-list">
+    <>
       <h1 className="title">Featured articles</h1>
-      {blogPosts.map((posts, index) => {
-        return (
-          <div key={index} className="blog-posts-container">
-            <Link href={"/blog-posts/" + posts.fields.slug}>
-              <a key={index} className="blog-title">
-                {posts.fields.title}
-              </a>
-            </Link>
-            <h3 className="brief-description">
-              {posts.fields.briefDescription}
-            </h3>
-            <p className="blog-author">By {posts.fields.author}</p>
-            <p className="blog-date-created">{posts.fields.dateCreated}</p>
-          </div>
-        );
-      })}
-    </div>
+      <div className="blog-post-list">
+        {blogPosts.map((post, index) => {
+          return <BlogCard key={index} post={post} />;
+        })}
+      </div>
+    </>
   );
 }
-
-// figure out how to convert rich text from markdown
