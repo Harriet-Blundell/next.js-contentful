@@ -27,7 +27,7 @@ export default function BlogCard({ post }) {
       <Link href={"/blog-posts/" + slug}>
         <a className="blog-title">{title}</a>
       </Link>
-      <h3 className="brief-description">{briefDescription}</h3>
+      <p className="brief-description">{briefDescription}</p>
       <div className="blog-author-container">
         <Image
           class="avatar"  

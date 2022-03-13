@@ -37,16 +37,16 @@ a {
   width: 500px;
 }
 
-.blog-title {
-  font-size: 30px;
-  font-weight: bold;
-  padding-top: 10px;
-}
-
 .blog-image {
   top: 50%;
   left: 50%;
   border-radius: 10px;
+}
+
+.blog-title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 10px;
 }
 
 .blog-author-container {
