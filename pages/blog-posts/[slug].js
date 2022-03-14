@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
+import Skeleton from "../../components/Skeleton";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -47,7 +48,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogPostDetails({ blog }) {
-  if (!blog) return <div>Loading your beautiful content...</div>;
+  if (!blog) return <Skeleton />
   const { title, author, thumbnail, avatar, mainBlogContent } = blog.fields;
   return (
     <div className="blog-post-details-container">
