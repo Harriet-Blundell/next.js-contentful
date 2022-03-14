@@ -24,7 +24,7 @@ export async function getStaticPaths() {
   // Next.js uses the array of objects to build static pages for each path
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -47,6 +47,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogPostDetails({ blog }) {
+  if (!blog) return <div>Loading your beautiful content...</div>;
   const { title, author, thumbnail, avatar, mainBlogContent } = blog.fields;
   return (
     <div className="blog-post-details-container">
