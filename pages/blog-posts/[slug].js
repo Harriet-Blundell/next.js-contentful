@@ -28,8 +28,10 @@ export async function getStaticPaths() {
   };
 }
 
-// Runs getStaticPaths() and generates the individual paths for the pages
-// passes in a context object to getStaticProps every time the function runs
+// Every time getStaticPaths() is run and it generates the individual paths for the pages
+// passes in a context object (params property) to getStaticProps every time the function runs
+// the slug field will allow us to limit the request to just get the individual post
+// we want the field of slug to match the value of slug - unique field (contentful)
 export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
     content_type: "blogPosts",
@@ -39,6 +41,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       blog: items[0],
+      revalidate: 10,
     },
   };
 }

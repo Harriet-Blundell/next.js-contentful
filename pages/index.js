@@ -16,13 +16,13 @@ export async function getStaticProps() {
   return {
     props: {
       blogPosts: res.items,
+      revalidate: 10,
     },
   };
 }
 
 // Any data added inside of the props object is passed to the BlogPosts component
 export default function BlogPosts({ blogPosts }) {
-  console.log(blogPosts);
   return (
     <>
       <h1 className="title">Featured articles</h1>
