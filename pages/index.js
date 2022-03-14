@@ -1,8 +1,6 @@
 import { createClient } from "contentful";
 import BlogCard from "../components/BlogCard";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-// asynchronous to collect data
 // Environment variables are automatically grabbed by Next.js
 // Adds them to the process object
 export async function getStaticProps() {

@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +17,7 @@ export default function BlogCard({ post }) {
   return (
     <div className="blog-posts-container">
       <Image
-        class="blog-image"
+        className="blog-image"
         src={`https:${thumbnail.fields.file.url}`}
         alt={thumbnail.fields.title}
         width={430}
@@ -30,7 +29,7 @@ export default function BlogCard({ post }) {
       <p className="brief-description">{briefDescription}</p>
       <div className="blog-author-container">
         <Image
-          class="avatar"  
+          className="avatar"  
           src={`https:${avatar.fields.file.url}`}
           alt={avatar.fields.description}
           width={40}
